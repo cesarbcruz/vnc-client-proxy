@@ -2,9 +2,10 @@
 kill -9 `lsof -t -i:6080`
 kill -9 `lsof -t -i:8888`
 
-echo "EXEMPLO ACESSO  ==============================================================================="
+echo "EXEMPLO LINK ACESSO"
+echo "==============================================================================="
 ip="$(hostname -I | awk '{print $1}')"
-echo "Link exemplo http://"$ip":8888/vnc_lite.html?host="$ip"&port=6080&path=websockify/?token=35075"
+echo "http://"$ip":8888/vnc_lite.html?host="$ip"&port=6080&path=websockify/?token=35075"
 echo "==============================================================================================="
 
 cd ./utils
