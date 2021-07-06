@@ -4,9 +4,7 @@ kill -9 `lsof -t -i:8888`
 
 echo "Link exemplo http://localhost:8888/vnc_lite.html?host=localhost&port=6080&path=websockify/?token=target1"
 cd ./utils
-ls
 ./launch.sh --listen 8888 &
-ls
 cd websockify
 ./run --token-plugin TokenFile --token-source ./token/ 6080 
 
