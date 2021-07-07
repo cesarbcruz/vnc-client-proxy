@@ -14,3 +14,11 @@
 ## DEPLOY CLOUD FOUNDRY
 -- cf create-app <app_name> --app-type docker
 -- CF_DOCKER_PASSWORD=<senha_docker_io> cf push <app_name> --docker-image cesarbcruz/vnc-client:latest -k 2G
+-- cf app <app_name> --guid
+-- cf curl /v2/apps/<guid> -X PUT -d '{"ports": [8888,6080]}'
+-- cf curl /v2/routes?q=host:<app_name>
+-- cf curl /v2/route_mappings -X POST -d '{"app_guid": "APP-GUID", "route_guid": "ROUTE-GUID", "app_port": 8888}' 
+-- cf curl /v2/route_mappings -X POST -d '{"app_guid": "APP-GUID", "route_guid": "ROUTE-GUID", "app_port": 6080}' 
+ 
+
+
